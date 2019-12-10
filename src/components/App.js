@@ -21,7 +21,10 @@ class App extends Component {
     const web3 = loadWeb3(dispatch)
     await web3.eth.net.getNetworkType()
     const networkId = await web3.eth.net.getId()
-    await loadAccount(web3, dispatch)
+    const x = await loadAccount(web3, dispatch)
+    if(x==='undefined'){
+      window.alert('Login MetaMask')
+    }
     const ds = await loadDS(web3, networkId, dispatch)
     if(!ds) {
       window.alert('Decentralized Store smart contract not detected on the current network.')
