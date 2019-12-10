@@ -4,6 +4,9 @@
   "description": "Cryptocurrency with inflation resistant",
   "author": "majewski.post@gmail.com",
   "private": true,
+  "engines": {
+    "node": "8.11.1"
+  },
   "dependencies": {
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
