@@ -30,8 +30,7 @@ export const checkAccount = () => {
 	setInterval(function() {
 		window.ethereum.on('accountsChanged', function(accounts) {})
 	}, 1000)
-} 
-
+}
 
 export const logInfo = () => {
   const elem = document.getElementById("logInfo")
