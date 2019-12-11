@@ -21,12 +21,6 @@ const navbarAccount = props => {
     )
 }
 
-const refreshInfo = props => {
-  return(
-    <h5 text-important="true" >{this.props.navInfoX}</h5>
-  )
-}
-
 class Navbar extends Component {
   render() {
     return (

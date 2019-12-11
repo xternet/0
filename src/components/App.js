@@ -20,14 +20,13 @@ class App extends Component {
   async loadBlockchainData(dispatch) {
     const web3 = loadWeb3(dispatch)
     await web3.eth.net.getNetworkType()
+
     const networkId = await web3.eth.net.getId()
-    const x = await loadAccount(web3, dispatch)
-    if(x==='undefined'){
-      window.alert('Login MetaMask')
-    }
+    await loadAccount(web3, dispatch)
+
     const ds = await loadDS(web3, networkId, dispatch)
     if(!ds) {
-      window.alert('Decentralized Store smart contract not detected on the current network.')
+      window.alert('Decentralized Store smart contract not detected on the current network.\n\n\nConnect with your MetaMask to the Kovan Test Network.')
       return
     }
 

@@ -13,13 +13,17 @@ import {
 	burnedEtherLoadedX,
 	tokenTotalSupplyLoaded
 } from './actions'
-import { logError } from '../helpers'
-
+import { logError, redirect} from '../helpers'
 
 export const _loadWeb3 = dispatch => {
-	const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545')
-	dispatch(web3Loaded(web3))
-	return web3
+
+	if (typeof window.ethereum !== 'undefined' || (typeof window.web3 !== 'undefined')) {
+		const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545')
+		dispatch(web3Loaded(web3))
+		return web3
+	} else {
+		redirect();
+	}
 }
 
 export const _loadAccount = async (web3, dispatch) => {
@@ -39,7 +43,6 @@ export const _loadToken = async (web3, networkId, dispatch) => {
 		return null
 	}
 }
-
 
 export const _loadDS = async (web3, networkId, dispatch) => {
 	try {
@@ -74,7 +77,6 @@ export const _loadBurnedEtherX = async (dispatch, ds) => {
 	}
 }
 
-
 export const _loadTokenTotalSupply = async (dispatch, token) => {
 	try {
 		const totalSupply = await token.methods.totalSupply().call()
@@ -85,7 +87,6 @@ export const _loadTokenTotalSupply = async (dispatch, token) => {
 		return null
 	}
 }
-
 
 export const _loadPruchaseInfo = async (dispatch, ds) => {
 	const buyStream = await ds.getPastEvents('TokenPurchase', {fromBlock: 0, toBlock: 'latest'})
@@ -126,7 +127,6 @@ export const _updateNavbarInfo = async (dispatch, ds, token, web3) => {
 		}
 	}, 1000)
 }
-
 
 export const _subscribeToEvents = async (dispatch, ds) => {
 	ds.events.TokenPurchase({}, (error, event ) => {

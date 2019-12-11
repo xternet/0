@@ -9088,12 +9088,12 @@
         }
       },
       "links": {},
-      "address": "0xbD601F1EFEF8493E916412FD874E711919Bab557",
-      "transactionHash": "0x33b27a889c4c2d6dfc9af49e147eddf7fd2d0206c1d7d19608d9393f22ddb6f4"
+      "address": "0x79e8ADf8951DB5E2dF7512088dA14Bb1114Fc33F",
+      "transactionHash": "0xb84d5221a1f75f883db5791b115b203625e6d6e1bc37c5c00b6dd640a8126dae"
     }
   },
   "schemaVersion": "3.0.19",
-  "updatedAt": "2019-12-10T14:14:50.000Z",
+  "updatedAt": "2019-12-11T03:28:42.646Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {
