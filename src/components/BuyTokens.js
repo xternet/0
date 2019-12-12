@@ -69,7 +69,7 @@ class BuyTokens extends Component {
           <div className="card bg-transparent text-white">
           <div className="card-body">
             <h2><p className="text-center">Buy</p></h2>
-             <h2><p className="text-center">t0k3n$</p></h2>
+             <h2><p className="text-center">T0k3n$</p></h2>
                 {this.props.showForm ? showForm(this.props) : <Spinner type="table"/>}
             </div>
           </div>

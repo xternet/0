@@ -27,7 +27,6 @@ export const _loadWeb3 = dispatch => {
 }
 
 export const _loadAccount = async (web3, dispatch) => {
-	const defaultAccount = await web3.eth.defaultAccount
 	const accounts = await web3.eth.getAccounts()
 	const account = accounts[0]
 	dispatch(web3AccountLoaded(account))
@@ -120,7 +119,6 @@ export const _updateNavbarInfo = async (dispatch, ds, token, web3) => {
 			totalSupply0=totalSupply
 		}
 
-		const defaultAccount = await web3.eth.defaultAccount
 		const accounts = await web3.eth.getAccounts()
 		const account = accounts[0]
 		if(account0!==account){
