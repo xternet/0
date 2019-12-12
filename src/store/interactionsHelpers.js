@@ -28,9 +28,13 @@ export const _loadWeb3 = dispatch => {
 
 export const _loadAccount = async (web3, dispatch) => {
 	const accounts = await web3.eth.getAccounts()
-	const account = accounts[0]
-	dispatch(web3AccountLoaded(account))
-	return account
+	const account = await accounts[0]
+	if(typeof account !== 'undefined'){
+		dispatch(web3AccountLoaded(account))
+		return account
+	} else {
+		window.alert('account is undefined :(')
+	}
 }
 
 export const _loadToken = async (web3, networkId, dispatch) => {
@@ -120,7 +124,7 @@ export const _updateNavbarInfo = async (dispatch, ds, token, web3) => {
 		}
 
 		const accounts = await web3.eth.getAccounts()
-		const account = accounts[0]
+		const account = await accounts[0]
 		if(account0!==account){
 			dispatch(web3AccountLoaded(account))
 			account0=account
