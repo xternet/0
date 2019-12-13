@@ -16,7 +16,6 @@ import {
 import { logError, redirect} from '../helpers'
 
 export const _loadWeb3 = dispatch => {
-
 	if (typeof window.ethereum !== 'undefined' || (typeof window.web3 !== 'undefined')) {
 		const web3 = new Web3(window.web3.currentProvider || 'http://localhost:7545')
 		dispatch(web3Loaded(web3))
@@ -33,7 +32,7 @@ export const _loadAccount = async (web3, dispatch) => {
 		dispatch(web3AccountLoaded(account))
 		return account
 	} else {
-		window.alert('account is undefined :(')
+		window.alert('account is undefined')
 	}
 }
 

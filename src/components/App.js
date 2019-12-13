@@ -20,9 +20,27 @@ class App extends Component {
   async loadBlockchainData(dispatch) {
     const web3 = loadWeb3(dispatch)
     await web3.eth.net.getNetworkType()
-
     const networkId = await web3.eth.net.getId()
+
+
+    await window.ethereum.enable()
+    const x = await window.ethereum.enable()
+    console.log('x: ', x)
+
+
+    try{
+      const y = await window.ethereum.enable()
+      console.log('y: ', y)
+    } catch (error){
+      console.log('error: ', error)
+    }
+    
+    await web3.eth.getAccounts()
+    const accounts = await web3.eth.getAccounts()
+    const account = await accounts[0]
+    console.log('acc: ', account)
     await loadAccount(web3, dispatch)
+
 
     const ds = await loadDS(web3, networkId, dispatch)
     if(!ds) {
