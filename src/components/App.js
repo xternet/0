@@ -22,26 +22,7 @@ class App extends Component {
     await web3.eth.net.getNetworkType()
     const networkId = await web3.eth.net.getId()
 
-
-    await window.ethereum.enable()
-    const x = await window.ethereum.enable()
-    console.log('x: ', x)
-
-
-    try{
-      const y = await window.ethereum.enable()
-      console.log('y: ', y)
-    } catch (error){
-      console.log('error: ', error)
-    }
-    
-    await web3.eth.getAccounts()
-    const accounts = await web3.eth.getAccounts()
-    const account = await accounts[0]
-    console.log('acc: ', account)
     await loadAccount(web3, dispatch)
-
-
     const ds = await loadDS(web3, networkId, dispatch)
     if(!ds) {
       window.alert('Decentralized Store smart contract not detected on the current network.\n\n\nConnect with your MetaMask to the Kovan Test Network.')
@@ -54,9 +35,9 @@ class App extends Component {
     if(!token) {
       window.alert('Token smart contract not detected on the current network.')
       return
-    }
-}
-
+    } 
+  }
+  
   render() {
     return (
       <div>
