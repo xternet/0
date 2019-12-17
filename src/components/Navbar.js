@@ -46,7 +46,7 @@ function mapStateToProps(state) {
   const price = priceSelector(state)
   const burnedEther = burnedEtherXSelector(state)
   const totalSupply = tokenTotalSupplySelector(state)
-  const navInfoX = navInfo(price, (burnedEther/DECIMALS).toFixed(5), totalSupply)
+  const navInfoX = navInfo((price/DECIMALS).toFixed(5), (burnedEther/DECIMALS).toFixed(5), totalSupply)
 
   return {
     account,
