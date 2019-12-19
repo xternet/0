@@ -7,7 +7,7 @@ import {
 	_loadPrice, 
 	_loadPruchaseInfo, 
 	_subscribeToEvents,
-	_loadBurnedEtherX,
+	_loadBurnedEther,
 	_loadTokenTotalSupply,
 	_updateNavbarInfo
  } from './interactionsHelpers'
@@ -45,8 +45,8 @@ export const makeBuyTokens = (dispatch, web3, ds, tokens, account) => {
 	_makeBuyTokens(dispatch, web3, ds, tokens, account)
 }
 
-export const loadBurnedEtherX = (dispatch, ds) => {
-	_loadBurnedEtherX(dispatch, ds)
+export const loadBurnedEther = (dispatch, ds) => {
+	_loadBurnedEther(dispatch, ds)
 }
 
 export const loadTokenTotalSupply = (dispatch, token) => {

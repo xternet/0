@@ -74,10 +74,10 @@ export function purchaseMade(trade) {
 	}
 }
 
-export function burnedEtherLoadedX(burnedEtherX) {
+export function burnedEtherLoaded(burnedEther) {
 	return {
-		type: 'BURNED_ETHER_LOADED_X',
-		burnedEtherX
+		type: 'BURNED_ETHER_LOADED',
+		burnedEther
 	}
 }
 

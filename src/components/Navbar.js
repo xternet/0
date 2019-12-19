@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { accountSelector, priceSelector, burnedEtherXSelector, tokenTotalSupplySelector } from '../store/selectors'
+import { accountSelector, priceSelector, burnedEtherSelector, tokenTotalSupplySelector } from '../store/selectors'
 import { DECIMALS, checkAccount, logInfo, navInfo} from '../helpers'
 import { SpinDot } from './Spinner'
 
@@ -44,7 +44,7 @@ class Navbar extends Component {
 function mapStateToProps(state) {
   const account = accountSelector(state)
   const price = priceSelector(state)
-  const burnedEther = burnedEtherXSelector(state)
+  const burnedEther = burnedEtherSelector(state)
   const totalSupply = tokenTotalSupplySelector(state)
   const navInfoX = navInfo((price/DECIMALS).toFixed(5), (burnedEther/DECIMALS).toFixed(5), totalSupply)
 

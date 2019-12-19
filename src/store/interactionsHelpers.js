@@ -10,7 +10,7 @@ import {
 	filledTradesLoaded,
 	buyTokensMaking,
 	purchaseMade,
-	burnedEtherLoadedX,
+	burnedEtherLoaded,
 	tokenTotalSupplyLoaded
 } from './actions'
 import { logError, redirect} from '../helpers'
@@ -71,10 +71,10 @@ export const _loadPrice = async (dispatch, ds) => {
 	}
 }
 
-export const _loadBurnedEtherX = async (dispatch, ds) => {
+export const _loadBurnedEther = async (dispatch, ds) => {
 	try {
 		const burnedEther = await ds.methods.weiBurned().call()
-		dispatch(burnedEtherLoadedX(burnedEther))
+		dispatch(burnedEtherLoaded(burnedEther))
 		return burnedEther
 	} catch (error) {
 		console.log('DS contract not deployed to the current network!')
@@ -114,7 +114,7 @@ export const _updateNavbarInfo = async (dispatch, ds, token, web3) => {
 
 		const burnedEther = await ds.methods.weiBurned().call()
 		if(burnedEther0!==burnedEther){
-			dispatch(burnedEtherLoadedX(burnedEther))
+			dispatch(burnedEtherLoaded(burnedEther))
 			burnedEther0=burnedEther
 		}
 

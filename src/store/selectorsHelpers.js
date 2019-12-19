@@ -12,7 +12,7 @@ export const ds = state => get(state, 'ds.contract')
 export const filledTradesLoaded = state => get(state, 'ds.filledTrades.loaded', false)
 export const filledTrades = state => get(state, 'ds.filledTrades.data', [])
 export const buyTokens = state => get(state, 'ds.buyTokens', {})
-export const burnedEtherX = state => get(state, 'burnedEtherX.burnedEtherX')
+export const burnedEther = state => get(state, 'burnedEther.burnedEther')
 export const tokenTotalSupply = state => get(state, 'tokenTotalSupply.totalSupply')
 
 export const decorateFilledTrades = trades => {

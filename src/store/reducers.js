@@ -26,8 +26,6 @@ function ds(state = {}, action) {
 			return { ...state, loaded: true, contract: action.contract }
 		case 'FILLED_TRADES_LOADED':
 			return { ...state, filledTrades: { loaded: true, data: action.filledTrades }}
-		case 'CURRENT_PRICE_LOADED':
-			return { ...state, currentPrice: { loaded: true, data: action.currentPrice }}
 		case 'BUY_TOKENS_AMOUNT_CHANGED':
 			return { ...state, buyTokens: { ...state.buyTokens, amount: action.amount}}
 		case 'BUY_TOKENS_MAKING':
@@ -58,10 +56,10 @@ function price(state = {}, action) {
 	}
 }
 
-function burnedEtherX(state = {}, action) {
+function burnedEther(state = {}, action) {
 	switch (action.type) {
-		case 'BURNED_ETHER_LOADED_X':
-			return{ ...state, burnedEtherX: action.burnedEtherX}
+		case 'BURNED_ETHER_LOADED':
+			return{ ...state, burnedEther: action.burnedEther}
 		default:
 			return state
 	}
@@ -82,7 +80,7 @@ const rootReducer = combineReducers({
 	token,
 	ds,
 	price,
-	burnedEtherX,
+	burnedEther,
 	tokenTotalSupply
 })
 

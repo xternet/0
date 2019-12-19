@@ -4,7 +4,7 @@ import { DSSelector, tokenSelector, web3Selector } from '../store/selectors'
 import { 
   loadPruchaseInfo,
   subscribeToEvents,
-  loadBurnedEtherX,
+  loadBurnedEther,
   loadTokenTotalSupply,
   updateNavbarInfo,
 } from '../store/interactions'
@@ -21,7 +21,7 @@ class Content extends Component {
     const { dispatch, ds, token, web3 } = props
     await loadPruchaseInfo(dispatch, ds)
     await subscribeToEvents(dispatch, ds)
-    await loadBurnedEtherX(dispatch, ds)
+    await loadBurnedEther(dispatch, ds)
     await loadTokenTotalSupply(dispatch, token)
     await updateNavbarInfo(dispatch, ds, token, web3)
   }

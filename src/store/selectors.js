@@ -12,7 +12,7 @@ import {
 	decorateFilledTrades,
 	decorateMyFilledTrades,
 	buyTokens,
-	burnedEtherX,
+	burnedEther,
 	tokenTotalSupply
 } from './selectorsHelpers'
 
@@ -23,7 +23,7 @@ export const tokenLoadedSelector = createSelector(tokenLoaded, tl => tl)
 export const tokenSelector = createSelector(token, t => t)
 export const DSLoadedSelector = createSelector(DSLoaded, el => el)
 export const DSSelector = createSelector(ds, e => e)
-export const burnedEtherXSelector = createSelector(burnedEtherX, be => be)
+export const burnedEtherSelector = createSelector(burnedEther, be => be)
 export const tokenTotalSupplySelector = createSelector(tokenTotalSupply, ts => ts)
 export const buyTokensSelector = createSelector(buyTokens, trade => trade)
 

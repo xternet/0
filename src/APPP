@@ -1,0 +1,82 @@
+Index.js - poczatkowy plik aplikacji:
+	ReactApp - aplikacja React
+	Redux - narzedzie Redux
+	serviceWorker - proxy aplikacja-przegladarka-siec
+	bootstrap - bilbioteka CSS
+	App.js - glowny plik, laczacy komponenty aplikacji:
+		React Component - klasa komponentu React
+		App.css - zawiera arkusz stylow
+		Navbar.js - stanowi pasek stanu aplikacji:
+			React, Component - klasa komponentu React
+			connect - polaczenie aplikacji react z narzedziem redux
+			Selector.js - pobiera informacje z narzedzia Redux:
+				accountSelector - pobiera informacje zalogowanego konta z:
+				 reducers.js - Narzedzie redux przechowywujace zmiany aplikacji
+				 	web3() - zwraca rodzaj sieci Ethereum oraz jej polaczone do niej konto
+			 			actions.js - zwraca funkcje dla wychwyconych zmian
+			 				WEB3_ACCOUNT_LOADED() - laduje adres polaczony do sieci
+				priceSelector - pobiera informacje ceny Tokena "0":
+					reducers.js
+						price()
+							actions.js
+								priceLoaded()
+				burnedEtherXSelector - pobiera informacje ilosc spalonych srodkow:
+					reducers.js
+						burnedEtherX()
+							actions.js
+								burnedEtherLoadedX()
+				tokenTotalSupplySelector - pobiera informacje ilosci Tokenow "0":
+					reducers.js
+						tokenTotalSupply()
+							actions.js
+								tokenTotalSupplyLoaded()
+			Helpers.js
+				DECIMAL = (10 ** 18)
+				checkAccount() - zwraca zalogowany adres(number)
+				logInfo() - w przypadku braku wykrycia adresu zwraca "Login MetaMask"
+				navInfo() - Zwraca informacje w pasku stanu:
+					Token/ETH - aktualna cena Tokena w Ethereum
+					BurnedETH - spalone srodki
+					Token Total Supply - ilosc Tokenow "0" w obiegu
+			Spinner.js - animacja ladowania stanu
+		Content.js - stanowi pozostala czesc aplikacji:
+			React Component - klasa komponentu React
+			connect - polaczenie aplikacji react z narzedziem redux
+			selectors.js - Pobiera dane z narzedzia redux: 
+				DSSelector.js - Pobiera informacje punktu zakupu:
+					reducers.js
+						ds() - zwraca informacje dokonywanych funkcji w punkcie zakupu:
+							actions.js
+								DS_LOADED() - ladowanie kontraktu punktu zakupu
+								FILLED_TRADES_LOADED() - dokonane transakcje
+								BUY_TOKENS_AMOUNT_CHANGED() - zmiana ilosci kupna (nr)
+								BUY_TOKENS_MAKING()	- kupienie i ladowanie tokenow
+								PURCHASE_MADE() - dokonanie transakcji
+				tokenSelector.js - Pobiera informacje Tokena "0":
+					reducers.js
+						token()
+							actions.js
+								TOKEN_LOADED() - ladowanie konktraktu Tokena "0"
+				web3Selector.js - pobiera informacje polaczonej sieci Ethereum:
+					reducers.js
+						web3()
+							actions.js
+				 				WEB3_LOADED()- laduje informacje wykrytej siec Ethereum
+			interactions.js - Pobiera dane kontraktow i przekazuje je narzedziowi redux:
+			  loadPruchaseInfo() - Przekazuje dane eventow "TokenPurchase" punktu zakupu do:
+			  	actions.js
+			  		filledTradesLoaded()
+
+			  subscribeToEvents() - 
+			  loadBurnedEtherX()
+			  loadTokenTotalSupply()
+			  updateNavbarInfo()
+		connect - polaczenie aplikacji react z narzedziem redux
+		interactions.js - pobiera i zwraca dane inteligentych kontraktow:
+		selectors.js - pobiera dane z narzedzia Redux
+			contractsLoadedSelector() - Pobiera dane kontraktow Tokena "0" oraz punktu zakupu
+
+
+
+
+
