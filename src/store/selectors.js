@@ -50,7 +50,7 @@ export const myFilledTradesSelector = createSelector(
 	filledTrades,
 	(account, trades) => {
 		trades = trades.filter((t) => t.investor === account || t.userFill === account)
-		trades = trades.sort((a,b) => a.timestamp - b.timestamp)
+		trades = trades.sort((a,b) => b.timestamp - a.timestamp)
 		trades = decorateMyFilledTrades(trades, account)
 		return trades
 	}

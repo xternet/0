@@ -30,25 +30,25 @@ class MyTransactions extends Component {
     return (
       <div className="buy">
         <span className="border-dotted">
-            <div className="card bg-transparent text-white">
-              <div className="card-header">
-               <p className="text-center">My Transactions</p>
-              </div>
-              <div className="card-body">
-                <table className="table table-transparent table-sm small text-white">
-                  <thead>
-                    <tr>
-                      <th>Date</th>
-                      <th>Amount</th>
-                      <th>Price</th>
-                    </tr>
-                  </thead>
-                  { this.props.showMyFilledTrades ? showMyFilledTrades(this.props) : <Spinner type="table"/>}
-                </table>
-              </div>
+          <div className="card bg-transparent text-white">
+            <div className="card-header">
+             <p className="text-center">My Transactions</p>
             </div>
-          </span>
-        </div>
+            <div className="card-body">
+              <table className="table table-transparent table-sm small text-white">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>PriceETH</th>
+                  </tr>
+                </thead>
+                { this.props.showMyFilledTrades ? showMyFilledTrades(this.props) : <Spinner type="table"/>}
+              </table>
+            </div>
+          </div>
+        </span>
+      </div>
     )
   }
 }

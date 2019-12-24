@@ -14,7 +14,7 @@ contract DS is ReentrancyGuard, usingProvable {
 	uint256 private _tokenAmount;
 	uint256 private _tradeId;
 
-	event TokenPurchase(address investor, uint256 amountWei, uint256 amountToken, uint256 id, uint256 timestamp);
+	event TokenPurchase(address investor, uint256 amountWei, uint256 amountToken, uint256 id, uint256 price, uint256 timestamp);
 	event EtherBurned(address investor, uint256 amountWei, uint256 timestamp);
 
 	event LogNewQuery(string description);
@@ -59,7 +59,6 @@ contract DS is ReentrancyGuard, usingProvable {
 	 	return _price;
 	}
 
-
 	function weiBurned() public view returns (uint256) {
 		return _weiBurned;
 	}
@@ -68,18 +67,17 @@ contract DS is ReentrancyGuard, usingProvable {
 		return _tradeId;
 	}
 
-
   function buyTokens() public nonReentrant payable {
-	_preValidatePurchase(msg.sender, msg.value);
+		_preValidatePurchase(msg.sender, msg.value);
 
-	_tokenAmount = _getTokenAmount(msg.value);
+		_tokenAmount = _getTokenAmount(msg.value);
 
-	_processPurchase(msg.sender, _tokenAmount);
-	_tradeId = _tradeId.add(1);
-	emit TokenPurchase(msg.sender, msg.value, _tokenAmount, _tradeId, now);
+		_processPurchase(msg.sender, _tokenAmount);
+		_tradeId = _tradeId.add(1);
+		emit TokenPurchase(msg.sender, msg.value, _tokenAmount, _tradeId, _price, now);
 
-	_burnEther();
-	emit EtherBurned(msg.sender, msg.value, now);
+		_burnEther();
+		emit EtherBurned(msg.sender, msg.value, now);
   }
 
  	function _preValidatePurchase(address investor, uint256 weiAmount) internal view {

@@ -62,6 +62,7 @@ export const _loadDS = async (web3, networkId, dispatch) => {
 
 export const _loadPrice = async (dispatch, ds) => {
 	try {
+		await ds.methods.update().call()
 		const price = await ds.methods.price().call()
 		dispatch(priceLoaded(price))
 		return price

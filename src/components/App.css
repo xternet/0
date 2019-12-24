@@ -166,3 +166,12 @@ body {
     display: none;
   }
 }
+
+/*.my-custom-scrollbar {
+  position: absolute;
+  height: 600px;
+  overflow: auto;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}*/

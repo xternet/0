@@ -17,6 +17,8 @@ export const tokenTotalSupply = state => get(state, 'tokenTotalSupply.totalSuppl
 
 export const decorateFilledTrades = trades => {
 	let previousTrade = trades[0]
+	let allTrades = trades
+	console.log('xxx: ', allTrades)
 		return(
 			trades.map((trade) => {
 			trade = decorateTrade(trade)
@@ -28,12 +30,11 @@ export const decorateFilledTrades = trades => {
 }
 
 export const decorateTrade = trade => {
-
-	let amountEther = trade.amountWei
+	/* global BigInt */
+	let tokenPriceETH = trade.price
 	let amountToken = trade.amountToken
-
-	let tokenPriceETH = (amountEther/amountToken)
 	tokenPriceETH = ether(tokenPriceETH).toFixed(5)
+ 
 	return({
 		...trade,
 		amountToken,
