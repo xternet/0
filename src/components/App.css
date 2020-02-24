@@ -26,14 +26,17 @@
   padding-bottom: 20px;
   padding-right: 250px;
   padding-left: 90px;
+  position: sticky;
 }
 
 .content div:last-child{
-  min-width: 300px;
+  min-width: 400px;
+  max-width: 450px;
 }
 
 .content div:first-child{
   min-width: 400px;
+  max-width: 450px;
 }
 
 .vertical-split {
@@ -115,9 +118,9 @@ body {
   .content {
     position: absolute;
     flex: auto;
-    flex-direction: column;
+    flex-direction: row;
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     overflow-y: auto;
     flex-wrap: nowrap;
   }
@@ -159,6 +162,8 @@ body {
   .buy {
     flex: auto;
   }
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 @media (max-width: 599px){
