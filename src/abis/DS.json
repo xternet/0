@@ -9232,12 +9232,12 @@
         }
       },
       "links": {},
-      "address": "0x7D27d7AfD05e851e522Ec216C8644984b368FD59",
-      "transactionHash": "0xe534389b31e64cc23bb952495675b1d0f5676ab258bf6f921d6a753fb32a5f2b"
+      "address": "0x79e8ADf8951DB5E2dF7512088dA14Bb1114Fc33F",
+      "transactionHash": "0x391ec1c48c55f30d12a40c48d742ddc7526e324487fe453c47ed10817f9413be"
     }
   },
   "schemaVersion": "3.0.19",
-  "updatedAt": "2019-12-24T00:07:13.528Z",
+  "updatedAt": "2020-02-22T07:12:55.488Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {

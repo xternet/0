@@ -15,7 +15,7 @@ const showMyFilledTrades = props => {
       { myFilledTrades.map((trade) => {
         return (
           <tr key={trade.id}>
-            <td className="text-muted">{trade.formattedTimestamp}</td>
+            <td align="left" className="text-muted">{trade.formattedTimestamp}</td>
             <td className={`text-${trade.tradeTypeClass}`}>{trade.tradeSign}{trade.amountToken}</td>
             <td className={`text-${trade.tradeTypeClass}`}>{trade.tokenPriceETH}</td>
           </tr>
@@ -36,9 +36,9 @@ class MyTransactions extends Component {
             </div>
             <div className="card-body">
               <table className="table table-transparent table-sm small text-white">
-                <thead>
+                <thead align="justify">
                   <tr>
-                    <th>Date</th>
+                    <th>Time</th>
                     <th>Amount</th>
                     <th>PriceETH</th>
                   </tr>

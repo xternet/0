@@ -26,25 +26,23 @@ class Trades extends Component {
   render() {
     return (
       <div className="buy">
-        <span className="border-dotted">
-          <div className="card bg-transparent text-white">
-            <div className="card-header">
-              <p className="text-center">Trades History</p>
-            </div>
-            <div className="card-body">
-              <table className="table table-transparent table-sm small text-white">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Amount</th>
-                    <th>PriceETH</th>
-                  </tr>
-                </thead>
-                { this.props.filledTradesLoaded ? showFilledTrades(this.props.filledTrades) : <Spinner type="table" />}
-              </table>
-            </div>
+        <div className="card bg-transparent text-white">
+          <div className="card-header">
+            <p className="text-center">Trades History</p>
           </div>
-        </span>
+          <div className="card-body">
+            <table className="table table-transparent table-sm small text-white">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Amount</th>
+                  <th>PriceETH</th>
+                </tr>
+              </thead>
+              { this.props.filledTradesLoaded ? showFilledTrades(this.props.filledTrades) : <Spinner type="table" />}
+            </table>
+          </div>
+        </div>
       </div>
     )
   }

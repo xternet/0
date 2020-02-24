@@ -17,8 +17,6 @@ export const tokenTotalSupply = state => get(state, 'tokenTotalSupply.totalSuppl
 
 export const decorateFilledTrades = trades => {
 	let previousTrade = trades[0]
-	let allTrades = trades
-	console.log('xxx: ', allTrades)
 		return(
 			trades.map((trade) => {
 			trade = decorateTrade(trade)
@@ -30,7 +28,6 @@ export const decorateFilledTrades = trades => {
 }
 
 export const decorateTrade = trade => {
-	/* global BigInt */
 	let tokenPriceETH = trade.price
 	let amountToken = trade.amountToken
 	tokenPriceETH = ether(tokenPriceETH).toFixed(5)
@@ -39,7 +36,7 @@ export const decorateTrade = trade => {
 		...trade,
 		amountToken,
 		tokenPriceETH,
-		formattedTimestamp: moment.unix(trade.timestamp).format('h:m:ss a M/D')
+		formattedTimestamp: moment.unix(trade.timestamp).format('h:m:ss a Y/M/D')
 	})
 }
 

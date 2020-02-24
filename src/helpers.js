@@ -21,7 +21,7 @@ export const tokenUSD = () =>{
 	  const elem = document.getElementById("tokenUSD")
 
 		if(typeof elem !== 'undefined' && elem !== null){
-			document.getElementById("tokenUSD").innerHTML = "Token/USD: " + costInUSD;
+			document.getElementById("tokenUSD").innerHTML = "0/USD: " + costInUSD;
 		} 
 	}, 1000);
 }
@@ -48,7 +48,7 @@ export const logError = () => {
 export const navInfo = (price, weiBurned, totalSupply) => {
 	if(typeof totalSupply !== 'undefined')
 	return(
-		'Token/ETH: ' + price +  '   ***   Burned ETH: ' + weiBurned + '   ***   Token Total Supply: ' + totalSupply
+		'0/ETH: ' + price +  '   ***   Burned ETH: ' + weiBurned + '   ***   Total Supply: ' + totalSupply
 	)
 }
 
