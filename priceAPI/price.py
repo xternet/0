@@ -1,24 +1,24 @@
-import time
-import requests
 import json
+import requests
 import statistics
+import time
 
-# URLs
+#URLs:
+urlBitfinex = "https://api.bitfinex.com/v1/pubticker/ethusd"
 urlCoinbase = "https://api.pro.coinbase.com/products/ETH-USD/ticker"
 urlKraken = "https://api.kraken.com/0/public/Ticker?pair=ETHUSD"
-urlBitfinex = "https://api.bitfinex.com/v1/pubticker/ethusd"
 
-# Variables
-SV = 1
-AIT = 0.02
-SSY = 31557600
+#Variables:
+ethInWei = 10**18
+IT = 0.02
+YS = 31557600
 TS = 1577836800
-ethInWei = 10 ** 18
 
-
-IPS = SV * (AIT/SSY)
-TD = time.time() - TS
-tokenInUsd = SV + (TD * IPS)
+#Formulas:
+IS = IT/YS
+SV = IS+1
+TD = time.time()-TS
+tokenInUsd = SV**TD
 
 ################################################################
 def calcPrice():
@@ -40,14 +40,14 @@ def calcPrice():
 	jBitfinex = json.loads(dBitfinex)
 	priceBitfinex = jBitfinex["mid"]
 
-	#get AVG ETH/USD
+	#Get AVG ETH/USD
 	prices = [priceCoinbase, priceKraken, priceBitfinex]
 	avgEthUsd = statistics.median(prices)
 	
-	#calc Token/ETH
+	#Calc 0/ETH
 	tokenInEth = float(tokenInUsd)/float(avgEthUsd)
 	
-	#calc Token/Wei
+	#Calc 0/Wei
 	tokenInWei = tokenInEth * ethInWei
 
 	print(int(tokenInWei))

@@ -9,19 +9,21 @@ export const ether = wei => {
 }
 
 export const tokenUSD = () =>{
-	const startTime = 1577836800
-	const startValue = 1
-	let avgInflation = 0.000000000633761756
+	const TS = 1577836800
+	const YS = 31557600
+	const IT = 0.02
+  let IS = IT/ YS
+  let SV = IS + 1
 
   	setInterval(function() {
-	  var time = Math.floor(new Date().getTime()/1000.0)
-	  var timeDif = time - startTime;
-	  let costInUSD = startValue + (timeDif * avgInflation)
-	  costInUSD = costInUSD.toFixed(10)
-	  const elem = document.getElementById("tokenUSD")
+  		let TN = Math.floor(new Date().getTime()/1000.0)
+  		let TD = TN - TS;
+		  let costInUSD = SV**TD
+		  costInUSD = costInUSD.toFixed(10)
+		  const elem = document.getElementById("tokenUSD")
 
-		if(typeof elem !== 'undefined' && elem !== null){
-			document.getElementById("tokenUSD").innerHTML = "0/USD: " + costInUSD;
+			if(typeof elem !== 'undefined' && elem !== null){
+				document.getElementById("tokenUSD").innerHTML = "0/USD: " + costInUSD;
 		} 
 	}, 1000);
 }
