@@ -1,7 +1,7 @@
 {
   "name": "0",
   "version": "0.1.0",
-  "description": "Cryptocurrency with inflation resistant",
+  "description": "Stablecoin",
   "author": "majewski.post@gmail.com",
   "private": true,
   "engines": {
