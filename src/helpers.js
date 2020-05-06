@@ -55,7 +55,7 @@ export const navInfo = (price, weiBurned, totalSupply) => {
 }
 
 export const redirect = () => {
-	window.alert('In order to view DAPP add MetaMask extension to your browser');
+	window.alert('In order to view DAPP add MetaMask extension to your browser')
 	const mmWebsite = "https://metamask.io/"
 	window.location.assign(mmWebsite)
 }
