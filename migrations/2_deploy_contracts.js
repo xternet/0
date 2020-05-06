@@ -1,5 +1,5 @@
-const Token = artifacts.require("./Token.sol");
-const DS = artifacts.require("./DS.sol");
+const Token = artifacts.require("./Token.sol")
+const DS = artifacts.require("./DS.sol")
 
 module.exports = async function(deployer) {
 	const _name = '0';
