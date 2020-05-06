@@ -20,7 +20,7 @@ SV = IS+1
 TD = time.time()-TS
 tokenInUsd = SV**TD
 
-################################################################
+###############################################################
 def calcPrice():
 	#Coinbase
 	rCoinbase = requests.get(urlCoinbase)
@@ -51,6 +51,6 @@ def calcPrice():
 	tokenInWei = tokenInEth * ethInWei
 
 	print(int(tokenInWei))
-################################################################
+###############################################################
 
 calcPrice()
