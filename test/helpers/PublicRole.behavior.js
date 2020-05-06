@@ -1,10 +1,10 @@
-const { expectRevert, constants, expectEvent } = require('openzeppelin-test-helpers');
-const { ZERO_ADDRESS } = constants;
+const { expectRevert, constants, expectEvent } = require('openzeppelin-test-helpers')
+const { ZERO_ADDRESS } = constants
 
-const { expect } = require('chai');
+const { expect } = require('chai')
 
 function capitalize (str) {
-  return str.replace(/\b\w/g, l => l.toUpperCase());
+  return str.replace(/\b\w/g, l => l.toUpperCase())
 }
 
 // Tests that a role complies with the standard role interface, that is:
