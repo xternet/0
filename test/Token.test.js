@@ -1,10 +1,10 @@
-const { BN } = require('openzeppelin-test-helpers');
-const Token = artifacts.require('./Token');
+const { BN } = require('openzeppelin-test-helpers')
+const Token = artifacts.require('./Token')
 
-const { shouldBehaveLikeERC20Mintable } = require('./helpers/TokenMintable.behavior.js');
-const { shouldBehaveLikePublicRole } = require('./helpers/PublicRole.behavior.js');
+const { shouldBehaveLikeERC20Mintable } = require('./helpers/TokenMintable.behavior.js')
+const { shouldBehaveLikePublicRole } = require('./helpers/PublicRole.behavior.js')
 
-const { expect } = require('chai');
+const { expect } = require('chai')
 
 contract('Token', function ([_, minter, owner, otherMinter, ...otherAccounts]) {
   const _name = 'StoreOfValue';
