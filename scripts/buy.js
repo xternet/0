@@ -1,3 +1,5 @@
+// Script testing buying function via DApp
+
 const Token = artifacts.require("Token")
 const DS = artifacts.require("DS")
 
