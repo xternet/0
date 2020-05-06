@@ -6,7 +6,7 @@
 ## Info:
 ```
 * peg - inlation target,
-* stablecoin mechanism - "Proof-of-Burn" (burn ether for which tokens were bought),
+* stablecoin mechanism - "Proof-of-Burn" (burn Ether for which tokens were bought),
 * token value remains stable as long as people believe in it (at least in this version).
 ```
 
