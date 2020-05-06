@@ -1,4 +1,4 @@
-# School final project:
+## School final project:
 
 ```
 "Cryptocurrency with constant value built on the Ethereum decentralized platform"
@@ -7,7 +7,7 @@
 ## Info:
 ```
 * peg - inlation target,
-* stablecoin mechanism - "Proof-of-Burn" (burn Ether for which tokens were bought),
+* mechanism - "Proof-of-Burn" (burn Ether for which tokens were bought),
 * token value remains stable as long as people believe in it (at least in this version).
 ```
 
@@ -17,7 +17,7 @@
 
 #### Project workflow:
 
-![Project workflow](https://bit.ly/2zWpt98)
+![Project workflow](https://bit.ly/35DCeRV)
 
 ### DApp link (Kovan): 
 [DApp](https://token-0.herokuapp.com/)
