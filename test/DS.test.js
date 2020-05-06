@@ -1,9 +1,9 @@
-const { BN, ether, expectRevert, balance, expectEvent, constants } = require('openzeppelin-test-helpers');
+const { BN, ether, expectRevert, balance, expectEvent, constants } = require('openzeppelin-test-helpers')
 const Web3 = require('web3')
 const web3 = new Web3(new Web3.providers.WebsocketProvider('ws://localhost:7545'))
 
 const { waitForEvent } = require('./helpers/utils')
-const { expect } = require('chai');
+const { expect } = require('chai')
 
 const DS = artifacts.require('DS');
 const Token = artifacts.require('Token');
