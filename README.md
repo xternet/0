@@ -3,8 +3,6 @@
 "Cryptocurrency with constant value built on the Ethereum decentralized platform"
 ```
 
-
-
 ## :book: Info:
 ```
 * peg - inflation target,
@@ -12,16 +10,14 @@
 * token value remains stable as long as people believe in it (at least in this version).
 ```
 ![Stablecoins classification. Resource: https://bit.ly/33E6B9C](https://bit.ly/3fvqmpN)
-
-
+</br>
+</br>
 ## 🔧 Project workflow
 ![Project workflow](https://bit.ly/35DCeRV)
 
-
 ## :link:[DApp (Kovan)](https://token-0.herokuapp.com/)
 
-## 📃 Instructions:
-
+## 📃 Instructions to run:
 1. Download Git:
 </br>**sudo apt install git-all**
 2. Download project:
