@@ -15,8 +15,6 @@
 ## 🔧 Project workflow
 ![Project workflow](https://bit.ly/35DCeRV)
 
-## :link:[DApp (Kovan)](https://token-0.herokuapp.com/)
-
 ## 📃 Instructions to run:
 1. Download Git:
 </br>**sudo apt install git-all**
