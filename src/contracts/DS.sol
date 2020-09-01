@@ -41,9 +41,9 @@ contract DS is ReentrancyGuard, usingProvable {
 
 	function update() public payable {
 		if (provable_getPrice("URL") > address(this).balance) {
-		  emit LogNewQuery("Provable query was NOT sent, please add some ETH to cover for the query fee!");
-	} else {
-		  emit LogNewQuery("Provable query was sent, standing by for the answer...");
+			emit LogNewQuery("Provable query was NOT sent, please add some ETH to cover for the query fee!");
+		} else {
+			emit LogNewQuery("Provable query was sent, standing by for the answer...");
 			provable_query(600, "computation",["QmTGqAH6gqir17Qs7ARe1dcWWmQgSzXsZMZUCrG3Fv6WpR"]);
 		}
 	}
@@ -56,7 +56,7 @@ contract DS is ReentrancyGuard, usingProvable {
 	}
 
 	function price() public view returns (uint256) {
-	 	return _price;
+		return _price;
 	}
 
 	function weiBurned() public view returns (uint256) {
@@ -68,31 +68,32 @@ contract DS is ReentrancyGuard, usingProvable {
 	}
 
 	function buyTokens() public nonReentrant payable {
-	_preValidatePurchase(msg.sender, msg.value);
+		_preValidatePurchase(msg.sender, msg.value);
 
-	_tokenAmount = _getTokenAmount(msg.value);
+		_tokenAmount = _getTokenAmount(msg.value);
 
-	_processPurchase(msg.sender, _tokenAmount);
-	_tradeId = _tradeId.add(1);
-	emit TokenPurchase(msg.sender, msg.value, _tokenAmount, _tradeId, _price, now);
+		_processPurchase(msg.sender, _tokenAmount);
+		_tradeId = _tradeId.add(1);
+		emit TokenPurchase(msg.sender, msg.value, _tokenAmount, _tradeId, _price, now);
 
-	_burnEther();
-	emit EtherBurned(msg.sender, msg.value, now);
+		_burnEther();
+		emit EtherBurned(msg.sender, msg.value, now);
 	}
 
- 	function _preValidatePurchase(address investor, uint256 weiAmount) internal view {
+	function _preValidatePurchase(address investor, uint256 weiAmount) internal view {
 		require(investor != address(0), "Decentralized Store: investor is the zero address");
 		require(weiAmount != 0, "Decentralized Store: wei amount is 0");
 	}
 
 	function _getTokenAmount(uint256 weiAmount) internal view returns (uint256) {
-	  return weiAmount.div(_price);
+		return weiAmount.div(_price);
 	}
 
 	function _processPurchase(address investor, uint256 _tokenAmount) internal {
 		require(
 			Token(address(token())).mint(investor, _tokenAmount),
-			"Decentralized Store: minting failed");
+			"Decentralized Store: minting failed"
+		);
 	}
 
 	function _burnEther() internal {
