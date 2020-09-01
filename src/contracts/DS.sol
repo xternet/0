@@ -67,18 +67,18 @@ contract DS is ReentrancyGuard, usingProvable {
 		return _tradeId;
 	}
 
-  function buyTokens() public nonReentrant payable {
-		_preValidatePurchase(msg.sender, msg.value);
+	function buyTokens() public nonReentrant payable {
+	_preValidatePurchase(msg.sender, msg.value);
 
-		_tokenAmount = _getTokenAmount(msg.value);
+	_tokenAmount = _getTokenAmount(msg.value);
 
-		_processPurchase(msg.sender, _tokenAmount);
-		_tradeId = _tradeId.add(1);
-		emit TokenPurchase(msg.sender, msg.value, _tokenAmount, _tradeId, _price, now);
+	_processPurchase(msg.sender, _tokenAmount);
+	_tradeId = _tradeId.add(1);
+	emit TokenPurchase(msg.sender, msg.value, _tokenAmount, _tradeId, _price, now);
 
-		_burnEther();
-		emit EtherBurned(msg.sender, msg.value, now);
-  }
+	_burnEther();
+	emit EtherBurned(msg.sender, msg.value, now);
+	}
 
  	function _preValidatePurchase(address investor, uint256 weiAmount) internal view {
 		require(investor != address(0), "Decentralized Store: investor is the zero address");
