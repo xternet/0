@@ -41,7 +41,7 @@ contract DS is ReentrancyGuard, usingProvable {
 
 	function update() public payable {
 		if (provable_getPrice("URL") > address(this).balance) {
-			emit LogNewQuery("Provable query was NOT sent, please add some ETH to cover for the query fee");
+			emit LogNewQuery("Provable query was NOT sent, please add some ETH to cover for the query fee!");
 		} else {
 			emit LogNewQuery("Provable query was sent, standing by for the answer...");
 			provable_query(600, "computation",["QmTGqAH6gqir17Qs7ARe1dcWWmQgSzXsZMZUCrG3Fv6WpR"]);
