@@ -22,35 +22,35 @@ tokenInUsd = SV**TD
 
 ###############################################################
 def calcPrice():
-	#Coinbase
-	rCoinbase = requests.get(urlCoinbase)
-	dCoinbase = rCoinbase.text
-	jCoinbase = json.loads(dCoinbase)
-	priceCoinbase = jCoinbase["price"]
-	
-	#Kraken
-	rKraken = requests.get(urlKraken)
-	dKraken = rKraken.text
-	jKraken = json.loads(dKraken)
-	priceKraken = jKraken["result"]["XETHZUSD"]["c"][0]
+  #Coinbase
+  rCoinbase = requests.get(urlCoinbase)
+  dCoinbase = rCoinbase.text
+  jCoinbase = json.loads(dCoinbase)
+  priceCoinbase = jCoinbase["price"]
+  
+  #Kraken
+  rKraken = requests.get(urlKraken)
+  dKraken = rKraken.text
+  jKraken = json.loads(dKraken)
+  priceKraken = jKraken["result"]["XETHZUSD"]["c"][0]
 
-	#Bitfinex
-	rBitfinex = requests.get(urlBitfinex)
-	dBitfinex = rBitfinex.text
-	jBitfinex = json.loads(dBitfinex)
-	priceBitfinex = jBitfinex["mid"]
+  #Bitfinex
+  rBitfinex = requests.get(urlBitfinex)
+  dBitfinex = rBitfinex.text
+  jBitfinex = json.loads(dBitfinex)
+  priceBitfinex = jBitfinex["mid"]
 
-	#Get AVG ETH/USD
-	prices = [priceCoinbase, priceKraken, priceBitfinex]
-	avgEthUsd = statistics.median(prices)
-	
-	#Calc 0/ETH
-	tokenInEth = float(tokenInUsd)/float(avgEthUsd)
-	
-	#Calc 0/Wei
-	tokenInWei = tokenInEth * ethInWei
+  #Get AVG ETH/USD
+  prices = [priceCoinbase, priceKraken, priceBitfinex]
+  avgEthUsd = statistics.median(prices)
+  
+  #Calc 0/ETH
+  tokenInEth = float(tokenInUsd)/float(avgEthUsd)
+  
+  #Calc 0/Wei
+  tokenInWei = tokenInEth * ethInWei
 
-	print(int(tokenInWei))
+  print(int(tokenInWei))
 ###############################################################
 
 calcPrice()

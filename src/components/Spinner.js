@@ -10,9 +10,9 @@ export default function ({ type }) {
 
 
 export const SpinDot = () => {
-	return(
-		<div className="spinner-grow text-primary" role="status">
-		  <span className="sr-only">Loading...</span>
-		</div>
-	)
+  return(
+    <div className="spinner-grow text-primary" role="status">
+      <span className="sr-only">Loading...</span>
+    </div>
+  )
 }

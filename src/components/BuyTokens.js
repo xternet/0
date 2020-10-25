@@ -27,36 +27,36 @@ const showForm = props => {
   } = props
 
   return(
-      <Tabs defaultActiveKey="buy" className="bg-transparent mt-5">
-        <Tab eventKey="buy" className="bg-transparent">
-          <form onSubmit={(event) => {
-            event.preventDefault()
-            makeBuyTokens(dispatch, web3, ds, buyTokens, account)
-          }}>
-            <div className="form-group small">
-              <div className="input-group">
-                <input
-                  type="text"
-                  className="form-control form-control-sm bg-transparent text-white"
-                  placeholder="amount..."
-    							onChange={(e) => dispatch( buyTokensAmountChanged( e.target.value ) )}
-                  required
-                />
-              </div>
-             </div>
-            <button type="submit" className="btn btn-outline-success btn-block">Buy</button>
-            { showBuyTotal ? <small><b>Total: { ((buyTokens.amount * price)/DECIMALS).toFixed(5)} ETH~</b></small> : null }
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <p className="text-center" text-important="true" id="tokenUSD"></p>
-          </form>
-        </Tab>
-      </Tabs>
+    <Tabs defaultActiveKey="buy" className="bg-transparent mt-5">
+      <Tab eventKey="buy" className="bg-transparent">
+        <form onSubmit={(event) => {
+          event.preventDefault()
+          makeBuyTokens(dispatch, web3, ds, buyTokens, account)
+        }}>
+          <div className="form-group small">
+            <div className="input-group">
+              <input
+                type="text"
+                className="form-control form-control-sm bg-transparent text-white"
+                placeholder="amount..."
+  							onChange={(e) => dispatch( buyTokensAmountChanged( e.target.value ) )}
+                required
+              />
+            </div>
+           </div>
+          <button type="submit" className="btn btn-outline-success btn-block">Buy</button>
+          { showBuyTotal ? <small><b>Total: { ((buyTokens.amount * price)/DECIMALS).toFixed(5)} ETH~</b></small> : null }
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <p className="text-center" text-important="true" id="tokenUSD"></p>
+        </form>
+      </Tab>
+    </Tabs>
   )
 }
 
