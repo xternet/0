@@ -14,7 +14,6 @@ export const filledTrades = state => get(state, 'ds.filledTrades.data', [])
 export const buyTokens = state => get(state, 'ds.buyTokens', {})
 export const burnedEther = state => get(state, 'burnedEther.burnedEther')
 export const tokenTotalSupply = state => get(state, 'tokenTotalSupply.totalSupply')
-
 export const decorateFilledTrades = trades => {
   let previousTrade = trades[0]
     return(
