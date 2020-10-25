@@ -11,5 +11,3 @@ contract Token is ERC20Detailed, ERC20Mintable, TokenMinterRole {
   {
   }
 }
-
-

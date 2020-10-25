@@ -15,16 +15,16 @@ export const tokenUSD = () =>{
   let IS = IT/ YS
   let SV = IS + 1
 
-    setInterval(function() {
-      let TN = Math.floor(new Date().getTime()/1000.0)
-      let TD = TN - TS;
-      let costInUSD = SV**TD
-      costInUSD = costInUSD.toFixed(10)
-      const elem = document.getElementById("tokenUSD")
+  setInterval(function() {
+    let TN = Math.floor(new Date().getTime()/1000.0)
+    let TD = TN - TS;
+    let costInUSD = SV**TD
+    costInUSD = costInUSD.toFixed(10)
+    const elem = document.getElementById("tokenUSD")
 
-      if(typeof elem !== 'undefined' && elem !== null){
-        document.getElementById("tokenUSD").innerHTML = "0/USD: " + costInUSD;
-    } 
+    if(typeof elem !== 'undefined' && elem !== null){
+      document.getElementById("tokenUSD").innerHTML = "0/USD: " + costInUSD;
+    }
   }, 1000);
 }
 
@@ -48,10 +48,11 @@ export const logError = () => {
 }
 
 export const navInfo = (price, weiBurned, totalSupply) => {
-  if(typeof totalSupply !== 'undefined')
-  return(
-    '0/ETH: ' + price +  '   ***   Burned ETH: ' + weiBurned + '   ***   Total Supply: ' + totalSupply
-  )
+  if(typeof totalSupply !== 'undefined') {
+    return(
+      '0/ETH: ' + price +  '   ***   Burned ETH: ' + weiBurned + '   ***   Total Supply: ' + totalSupply
+    )
+  }
 }
 
 export const redirect = () => {

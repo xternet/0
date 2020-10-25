@@ -16,58 +16,58 @@ export const burnedEther = state => get(state, 'burnedEther.burnedEther')
 export const tokenTotalSupply = state => get(state, 'tokenTotalSupply.totalSupply')
 
 export const decorateFilledTrades = trades => {
-	let previousTrade = trades[0]
-		return(
-			trades.map((trade) => {
-			trade = decorateTrade(trade)
-			trade = decorateFilledTrade(trade, previousTrade)
-			previousTrade = trade
-			return trade
-		})
-	)
+  let previousTrade = trades[0]
+    return(
+      trades.map((trade) => {
+      trade = decorateTrade(trade)
+      trade = decorateFilledTrade(trade, previousTrade)
+      previousTrade = trade
+      return trade
+    })
+  )
 }
 
 export const decorateTrade = trade => {
-	let tokenPriceETH = trade.price
-	let amountToken = trade.amountToken
-	tokenPriceETH = ether(tokenPriceETH).toFixed(5)
+  let tokenPriceETH = trade.price
+  let amountToken = trade.amountToken
+  tokenPriceETH = ether(tokenPriceETH).toFixed(5)
  
-	return({
-		...trade,
-		amountToken,
-		tokenPriceETH,
-		formattedTimestamp: moment.unix(trade.timestamp).format('h:m:ss a Y/M/D')
-	})
+  return({
+    ...trade,
+    amountToken,
+    tokenPriceETH,
+    formattedTimestamp: moment.unix(trade.timestamp).format('h:m:ss a Y/M/D')
+  })
 }
 
 export const decorateFilledTrade = trade => {
-	return({
-		...trade,
-		tokenPriceClassETH: makeGreen(trade),
-	})
+  return({
+    ...trade,
+    tokenPriceClassETH: makeGreen(trade),
+  })
 }
 
 const makeGreen = () => {
-	return GREEN
+  return GREEN
 }
 
 export const decorateMyFilledTrades = (trades, account) => {
-	return(
-		trades.map((trade) => {
-			trade = decorateTrade(trade)
-			trade = decorateMyFilledTrade(trade, account)
-			return(trade)
-		})
-	)
+  return(
+    trades.map((trade) => {
+      trade = decorateTrade(trade)
+      trade = decorateMyFilledTrade(trade, account)
+      return(trade)
+    })
+  )
 }
 
 export const decorateMyFilledTrade = (trade, account) => {
-	const tradeType = 'buy'
+  const tradeType = 'buy'
 
-	return({
-		...trade,
-		tradeType,
-		tradeTypeClass: (GREEN),
-		tradeSign: ('+')
-	})
+  return({
+    ...trade,
+    tradeType,
+    tradeTypeClass: (GREEN),
+    tradeSign: ('+')
+  })
 }
