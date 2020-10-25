@@ -10,7 +10,7 @@ const Token = artifacts.require('Token');
 const ERC20 = artifacts.require('openzeppelin-solidity/contracts/token/ERC20/ERC20');
 
 contract('DS', function ([_, deployer, investor]) {
-	const value = ether('0.1');
+	const value = ether('0.1');//
 	const _name = '0';
 	const _symbol = '0';
 	const _decimals = new BN(18);
