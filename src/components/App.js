@@ -40,9 +40,9 @@ class App extends Component {
   
   render() {
     return (
-      <div>
-          <Navbar />
-          { this.props.contractsLoaded ? <Content /> : <div className="content"></div> }
+      <div className='text-monospace'>
+        <Navbar />
+        { this.props.contractsLoaded ? <Content /> : <div className="content"></div> }
       </div>
     );
   }

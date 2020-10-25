@@ -26,7 +26,6 @@ export const DSSelector = createSelector(ds, e => e)
 export const burnedEtherSelector = createSelector(burnedEther, be => be)
 export const tokenTotalSupplySelector = createSelector(tokenTotalSupply, ts => ts)
 export const buyTokensSelector = createSelector(buyTokens, trade => trade)
-
 export const contractsLoadedSelector = createSelector(
   tokenLoaded,
   DSLoaded,

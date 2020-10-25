@@ -9,15 +9,15 @@ const wait = seconds => {
 }
 
 module.exports = async function(callback) {
-try {
-  const accounts = await web3.eth.getAccounts()
-  const user1 = accounts[0]
-  const user2 = accounts[1]
-  const fault = 0.000000000000000001
+  try {
+    const accounts = await web3.eth.getAccounts()
+    const user1 = accounts[0]
+    const user2 = accounts[1]
+    const fault = 0.000000000000000001
 
-  const ds = await DS.deployed()
-  let price = await ds.price()
-  let result
+    const ds = await DS.deployed()
+    let price = await ds.price()
+    let result
 
     for (let i = 1; i <= 5; i++) {
       result = (price * (i+fault))

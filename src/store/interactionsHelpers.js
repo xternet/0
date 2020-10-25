@@ -40,7 +40,7 @@ export const _loadAccount = async (web3, dispatch) => {
 
 export const _loadToken = async (web3, networkId, dispatch) => {
   try {
-    const token = web3.eth.Contract(Token.abi, Token.networks[networkId].address)
+    const token = new web3.eth.Contract(Token.abi, Token.networks[networkId].address)
     dispatch(tokenLoaded(token))
     return token
   } catch (error) {
@@ -51,7 +51,7 @@ export const _loadToken = async (web3, networkId, dispatch) => {
 
 export const _loadDS = async (web3, networkId, dispatch) => {
   try {
-    const ds = web3.eth.Contract(DS.abi, DS.networks[networkId].address)
+    const ds = new web3.eth.Contract(DS.abi, DS.networks[networkId].address)
     dispatch(DSLoaded(ds))
     return ds
   } catch (error) {

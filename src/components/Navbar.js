@@ -28,10 +28,10 @@ class Navbar extends Component {
         <nav >
         <h2 className="p2"></h2>
         <h1 className="p1">
-          <a className="navbar-text"> 
+          <a className="navbar-text text-monospace"> 
           {this.props.navInfoX ? this.props.navInfoX : <SpinDot />}
           </a>
-          <li className="navbar-text">
+          <li className="navbar-text text-monospace">
             {this.props.account ? navbarAccount(this.props) : navbarLogin(this.props)}
           </li>
         </h1>

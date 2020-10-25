@@ -37,7 +37,7 @@ const showForm = props => {
             <div className="input-group">
               <input
                 type="text"
-                className="form-control form-control-sm bg-transparent text-white"
+                className="form-control form-control-sm bg-transparent text-white text-monospace"
                 placeholder="amount..."
   							onChange={(e) => dispatch( buyTokensAmountChanged( e.target.value ) )}
                 required
@@ -53,7 +53,7 @@ const showForm = props => {
           <br></br>
           <br></br>
           <br></br>
-          <p className="text-center" text-important="true" id="tokenUSD"></p>
+          <p className="text-center text-monospace" text-important="true" id="tokenUSD"></p>
         </form>
       </Tab>
     </Tabs>
