@@ -10,8 +10,7 @@ import {
   _loadBurnedEther,
   _loadTokenTotalSupply,
   _updateNavbarInfo
- } from './interactionsHelpers'
-
+} from './interactionsHelpers'
 
 export const loadWeb3 = (dispatch) => {
   return _loadWeb3(dispatch)

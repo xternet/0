@@ -12,7 +12,7 @@ export const tokenUSD = () =>{
   const TS = 1577836800
   const YS = 31557600
   const IT = 0.02
-  let IS = IT/ YS
+  let IS = IT / YS
   let SV = IS + 1
 
   setInterval(function() {

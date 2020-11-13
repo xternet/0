@@ -144,7 +144,7 @@ export const _makeBuyTokens = async (dispatch, web3, ds, tokens, account) => {
   if(typeof account === 'undefined')
     window.alert('Login MetaMask')
   else {
-    const price = await ds.methods.price.call()
+    const price = await ds.methods.price().call()
     const tokenAmount = tokens.amount
     const accBalance = await web3.eth.getBalance(account)
 
