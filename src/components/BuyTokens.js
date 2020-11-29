@@ -10,7 +10,7 @@ import {
   priceSelector,
 } from '../store/selectors'
 import { 
-	buyTokensAmountChanged
+  buyTokensAmountChanged
  } from '../store/actions'
 import { makeBuyTokens } from '../store/interactions'
 import { DECIMALS, tokenUSD } from '../helpers'
