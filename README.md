@@ -1,6 +1,6 @@
 ## :mortar_board: School final project:
 ```
-"Cryptocurrency with constant value built on the Ethereum decentralized platform"
+"Stablecoin"
 ```
 
 ## :book: Info:
